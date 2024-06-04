@@ -1,0 +1,123 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="container">
+
+  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend><center><h2><b><p style="color:red;">SignUp Form</p></b></h2></center></legend><br>
+  
+  <!-- Text input-->
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59">E-Mail</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <%= f.email_field :email, placeholder: "E-Mail Address", class: "form-control",  type: "text", autofocus: true, autocomplete: "email" %>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59" >Password</label> 
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <%= f.password_field :password, placeholder: "Password", class: "form-control",  type: "password", autocomplete: "new-password" %>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <%= f.text_field :first_name, placeholder: "First Name", class: "form-control",  type: "text", autocomplete: "first_name" %>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59" >Last Name</label> 
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control",  type: "text", autocomplete: "last_name" %>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Text input-->
+     
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59">Mobile Number</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <%= f.text_field :mobile_number, placeholder: "mobile_number", class: "form-control", type: "text", autocomplete: "mobile_number" %>
+  </div>
+  </div>
+  </div>
+
+  <!-- Text input-->
+     
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59">Address</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <%= f.text_field :address, placeholder: "address", class: "form-control", type: "text", autocomplete: "mobile_number" %>
+  
+  </div>
+  </div>
+  </div>
+
+  <!-- Text input-->
+  
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label", style="color: #FF7A59" >Image</label> 
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <%= f.file_field :image %>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Select Basic -->
+  
+  <!-- Button -->
+  <div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-warning"> SUBMIT</button>
+  <button type="button" class="btn btn-warning"><%= link_to "Back To Login", new_session_path(resource_name) %>
+  </button>
+
+  </fieldset>
+  </form>
+  </div>
+  </div><!-- /.container -->
+  
+<% end %>
+
+
+
+
+
+
+
+

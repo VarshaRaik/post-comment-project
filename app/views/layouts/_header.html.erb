@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="container">
+<% if @user && @user.email.present? %>
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Danger!</strong> your EmailId & Password is wrong <%= link_to "LogOut", destroy_user_session_path, class: "btn btn-outline-success my-2 my-sm-0"%>
+</div>
+   </div>
+  </nav>
+  <% else %>
+<% end %>
+</body>
+</html>

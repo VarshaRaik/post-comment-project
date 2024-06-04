@@ -1,0 +1,42 @@
+<div class="card my-5">
+  <div class="card-body">
+    <p id="notice"><%= notice %></p>
+    <% if @post.image.attached? %>
+    <!-- @post.image.present? will always return true, use attached? to check presence -->
+      <p>
+        <strong>Image:</strong>
+        <br>
+        <%= image_tag(@post.image,:size => '1050x500') %>
+      </p>
+    <% end %>
+  <h1 class="text-center"><%= @post.title %></h1>
+  <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.email %>
+    <hr >
+    <div class="my-4">
+      <%= simple_format(@post.body) %>
+    </div>
+    <p style="color:red;"><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <%= link_to 'Like', post_likes_path(@post), method: :post %>
+  
+    <% if can? :update, @post %><%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-light' %> | <%end%>
+
+    <%= link_to 'Back', posts_path, class: 'btn btn-light' %>
+    <div class="card my-1"> 
+    <div class="card-body">
+    <p class="font-weight-bold">Comments</p>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <%= render @post.comments %>
+
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
+
+
+
